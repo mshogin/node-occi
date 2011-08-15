@@ -1,0 +1,20 @@
+{
+  "name" : "Node-Oracle"
+  , "version" : "v0.1.0"
+  , "description" : ""
+  , "homepage" : ""
+  , "author" : { 
+      "name" : ""
+      , "email" : ""
+      , "url" : ""
+    }
+  , "repository" : { 
+      "type" : "git"
+      , "url" : ""
+    }
+  , "scripts" : {
+      "preinstall" : "node-waf configure && node-waf build"
+      , "preuninstall" : "rm -rf build/*"
+    }
+  , "main" : "./build/default/node_oracle.node"
+}
