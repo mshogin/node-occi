@@ -15,10 +15,12 @@ def configure(conf):
     
         conf.env.append_unique('CXXFLAGS', ["-Wall"])
         conf.env.append_unique('CXXFLAGS', "-I" + environ['ORACLE_HOME'] + "/sdk/include/")	
+        conf.env.append_unique('CXXFLAGS', "-I" + environ['ORACLE_HOME'] + "/include/") 
         
         conf.env.append_unique('LINKFLAGS', "-locci")	
         conf.env.append_unique('LINKFLAGS', "-lclntsh")
         conf.env.append_unique('LINKFLAGS', "-L" +  environ['ORACLE_HOME'] )
+        conf.env.append_unique('LINKFLAGS', "-L" +  environ['ORACLE_HOME'] + '/lib' )
 
         if not conf.check(header_name="occi.h"):
             conf.fatal("not found occi.h")
